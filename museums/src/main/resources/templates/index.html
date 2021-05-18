@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+<link  rel="stylesheet" th:href="@{/css/index.css}">
+
+<body>
+
+<div class="rg_layout">
+                    <div class="rg_center">
+                        <div class="rg_form">
+                            <!--定义表单 form-->
+                            <form  action="/user/login" method="post">
+                                <table>
+                                    <tr>
+                                        <!--<h1 class="text-center" >博物馆可视化系统</h1>-->
+                                        <font class="text-center" size=6 color="#EE9A00">用户登录页面</font></br></br></br></br>
+                                    </tr>
+                                    <div th:text="${msg}"></div>
+
+                                    <tr>
+                    <td class="td_left"><label for="userName">用户名</label></td>
+                    <td class="td_right"><input type="text" name="userName" id="userName" placeholder="请输入用户名"></td>
+                                    </tr>
+                                    <tr>
+                    <td class="td_left"><label for="passWord">密码</label></td>
+                    <td class="td_right"><input type="passWord" name="passWord" id="passWord" placeholder="请输入密码"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_left"><label for="checkcode" >验证码</label></td>
+                                        <td class="td_right"><input type="text" name="checkcode" id="checkcode" placeholder="请输入验证码">
+                                            <img id="img_check" th:src="@{/check/code}">
+                                            <a id="change"  href="">看不清，换一张</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center"><input type="submit" id="btn_sub" value="登录"></td>
+                                        <td colspan="2" align="center">
+<!--                                            <a href="/user/toRegister">注册</a>-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

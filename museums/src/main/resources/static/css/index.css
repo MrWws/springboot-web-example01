@@ -1,0 +1,100 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    /*background-image: url("/img/background.jpg");*/
+    background-size:100% 100%;
+    background: #2567bc fixed;
+}
+
+rg_layout{
+    margin: auto;
+    vertical-align:middle
+
+}
+
+.rg_center{
+    float: right;
+    text-align:center;
+    width:400px;
+    height:280px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    margin-left:-200px;
+    margin-top:-140px;
+    border:1px;
+    align:center;
+
+}
+
+.td_left{
+    width: 100px;
+    text-align: right;
+    height: 50px;
+    color:#EE9A00;
+}
+.td_right{
+    padding-left: 50px ;
+    text-align: left;
+    color:#EE9A00;
+}
+
+.text-center{
+    text-align:center;
+    color:#EE9A00;
+}
+
+.rg_form{
+    text-align:center;
+
+}
+
+
+/*#username,#password,#checkcode{*/
+/*    width: 251px;*/
+/*    height: 40px;*/
+/*    border: 1px solid #A6A6A6 ;*/
+/*    !*设置边框圆角*!*/
+/*    border-radius: 5px;*/
+/*    padding-left: 10px;*/
+/*}*/
+
+#checkcode{
+    width: 110px;
+    height: 32px;
+
+}
+#username{
+    width: 90px;
+    height: 32px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+#password{
+    width: 90px;
+    height: 32px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#img_check{
+    height: 32px;
+    vertical-align: middle;
+    text-align: left
+}
+
+#btn_sub{
+    width: 100px;
+    height: 40px;
+    background-color: #EE9A00;
+    border: 1px solid #EE9A00 ;
+}
+
+#change{
+    color: #EE9A00;
+}

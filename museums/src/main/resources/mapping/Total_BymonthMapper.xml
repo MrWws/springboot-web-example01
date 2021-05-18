@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king.springboot.dao.Total_BymonthMapper">
+
+    <resultMap id="BaseResultMap" type="com.king.springboot.pojo.Total_Bymonth">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="months" jdbcType="INTEGER" property="months" />
+        <result column="volunteer_explain" jdbcType="INTEGER" property="volunteer_explain" />
+        <result column="full_time_public" jdbcType="INTEGER" property="full_time_public" />
+        <result column="full_time_customized" jdbcType="INTEGER" property="full_time_customized" />
+        <result column="wisdom_tour" jdbcType="INTEGER" property="wisdom_tour" />
+        <result column="wechat_count" jdbcType="INTEGER" property="wechat_count" />
+        <result column="web_count" jdbcType="INTEGER" property="web_count" />
+        <result column="other_count" jdbcType="INTEGER" property="other_count" />
+        <result column="arrived_count" jdbcType="INTEGER" property="arrived_count" />
+    </resultMap>
+
+    <select id="query" resultType="Total_Bymonth">
+        select * from total_bymonth
+    </select>
+
+</mapper>

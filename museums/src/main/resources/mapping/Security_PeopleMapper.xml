@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king.springboot.dao.Security_PeopleMapper">
+
+    <resultMap id="BaseResultMap" type="com.king.springboot.pojo.Security_People">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="job_id" jdbcType="INTEGER" property="job_id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="sex" jdbcType="VARCHAR" property="sex" />
+        <result column="birth" javaType="java.sql.Date" jdbcType="DATE" property="birth" />
+        <result column="position" jdbcType="VARCHAR" property="position" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="phone_numbers" jdbcType="BIGINT" property="phone_numbers" />
+    </resultMap>
+
+    <select id="query" resultType="Security_People">
+        select * from security_people
+    </select>
+    <insert id="add" parameterType="Security_People">
+       insert into security_people(job_id, name, sex,birth,position,age,phone_numbers)
+        VALUES (#{job_id},#{name},#{sex},#{birth},#{position},#{age},#{phone_numbers})
+   </insert>
+    <delete id="deleteByJob_Id" parameterType="int">
+        delete from security_people where job_id=#{job_id}
+    </delete>
+    <update id="update" parameterType="Security_People">
+        update security_people
+        set job_id=#{job_id},name=#{name},sex=#{sex},birth=#{birth},position=#{position},age=#{age},phone_numbers=#{phone_numbers} where job_id=${job_id}
+    </update>
+
+</mapper>

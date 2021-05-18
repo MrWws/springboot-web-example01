@@ -1,0 +1,18 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="com.king.springboot.dao.TolRegMapper">-->
+
+<!--    <resultMap id="BaseResultMap" type="com.king.springboot.pojo.Visitor_Total">-->
+<!--        <result column="id" jdbcType="INTEGER" property="id" />-->
+<!--        <result column="years" jdbcType="INTEGER" property="years" />-->
+<!--        <result column="arrive_account" jdbcType="arrive_account" property="arrive_account" />-->
+<!--    </resultMap>-->
+
+
+<!--    <select id="query" resultType="com.king.springboot.pojo.Visitor_Total">-->
+<!--        select * from t_total_arrived_count-->
+<!--    </select>-->
+
+
+
+<!--</mapper>-->

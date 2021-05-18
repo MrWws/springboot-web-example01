@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king.springboot.dao.Visitor_AgeMapper">
+
+    <resultMap id="BaseResultMap" type="com.king.springboot.pojo.Visitor_Age">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="age_group" jdbcType="VARCHAR" property="age_group" />
+        <result column="numbers" jdbcType="INTEGER" property="numbers" />
+    </resultMap>
+
+    <select id="query" resultType="Visitor_Age">
+        select * from visitor_age
+    </select>
+
+</mapper>

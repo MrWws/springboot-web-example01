@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.king.springboot.dao.CpDao">
+
+    <select id="collectionQuery" resultType="cp">
+        SELECT *
+        FROM collection_overview
+
+    </select>
+
+    <select id="collectionNumberQuery" resultType="cpnumber">
+        SELECT *
+        FROM collection_overview_number
+
+    </select>
+
+    <select id="collectionTypeQuery" resultType="cptype">
+        SELECT *
+        FROM collection_type
+
+    </select>
+
+    <select id="collectionDynastyQuery" resultType="cpdynasty">
+        SELECT *
+        FROM collection_dynasty
+
+    </select>
+
+    <select id="collectionRepairQuery" resultType="cprepair">
+        SELECT *
+        FROM collection_repair
+
+    </select>
+
+    <select id="collectionStorageQuery" resultType="cpstorage">
+        SELECT *
+        FROM collection_storage
+
+    </select>
+
+    <select id="collectionBorrowingQuery" resultType="cpborrowing">
+        SELECT *
+        FROM collection_borrowing
+
+    </select>
+</mapper>
+<!--<select id="login" resultType="user">-->
+<!--        SELECT *-->
+<!--        FROM user-->
+<!--        WHERE username = #{username}-->
+<!--          AND password = #{password}-->
+<!--    </select>-->
