@@ -9,6 +9,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Starter</title>
+  <style>
+
+    .content-wrapper{
+      height:2000px;
+      padding-top:50px;
+    }
+
+    .div-levelCenter{
+      margin-left:300px;
+      width:800px;
+      height:200px;
+      position:absolute;
+      margin-left:-400px;
+      left:50%;
+    }
+
+
+
+  </style>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" type="text/css" th:href="@{/bower_components/bootstrap/dist/css/bootstrap.min.css}">
@@ -329,7 +348,7 @@ desired effect
         }]
       };
 
-      myChart1.setOption(option);
+      myChart1.setOption(option1);
 
       window.onresize = function (ec) { // 监听窗口大小变化
         // console.log(ec)
