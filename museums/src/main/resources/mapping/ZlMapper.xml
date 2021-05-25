@@ -10,5 +10,9 @@
 
     </select>
 
+    <select id="exhibitionAudienceQuery" resultType="zlaudience">
+        SELECT *
+        FROM exhibition_overview_audience
 
+    </select>
 </mapper>

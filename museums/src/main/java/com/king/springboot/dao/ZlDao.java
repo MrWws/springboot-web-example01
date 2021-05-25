@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface ZlDao {
     List<Zl> exhibitionQuery();
+    List<ZlAudience> exhibitionAudienceQuery();
 }

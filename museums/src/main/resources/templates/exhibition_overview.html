@@ -83,6 +83,12 @@ desired effect
 -->
 <body class="hold-transition skin-blue sidebar-mini">
 <input id="obj" type="hidden" th:value="${obj}">
+<input id="obj1" type="hidden" th:value="${obj1}">
+<input id="obj2" type="hidden" th:value="${obj2}">
+
+
+<!--<input id="obj" type="hidden" th:value="${obj}">-->
+<!--<input id="obj" type="hidden" th:value="${obj}">-->
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -268,9 +274,11 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 
-    <div class="div-levelCenter" >
+      <div class="div-levelCenter" >
       <!-- <div style="margin: 0 auto; width: 800px;">-->
-      <div id="main" style="width: 1200px;height:600px;">
+        <div id="main" style="width: 800px;height:600px;"></div>
+        <div id="main1" style="width: 800px;height:600px;"></div>
+        <div id="main2" style="width: 800px;height:750px;"></div>
 
       </div>
     </div>
@@ -430,6 +438,293 @@ desired effect
       }
     </script>
 
+  <script type="text/javascript">
+    var app = {};
+
+    var element1 = document.getElementById("obj1").value;
+    b=JSON.parse(element1);
+    let name1=[];
+    for(i=0;i<b.length;i++){
+      name1[i]=b[i].name;
+    }
+    let year_reception_number=[];
+    for(i=0;i<b.length;i++){
+      year_reception_number[i]=b[i].year_reception_number;
+    }
+    let daily_reception_number=[];
+    for(i=0;i<b.length;i++){
+      daily_reception_number[i]=b[i].daily_reception_number;
+    }
+    let daily_online_pageviews_number=[];
+    for(i=0;i<b.length;i++){
+      daily_online_pageviews_number[i]=b[i].daily_online_pageviews_number;
+    }
+
+    var chartDom1 = document.getElementById('main1');
+    var myChart1 = echarts.init(chartDom1);
+    var option1;
+
+    var posList = [
+      'left', 'right', 'top', 'bottom',
+      'inside',
+      'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+      'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+    ];
+
+    app.configParameters = {
+      rotate: {
+        min: -90,
+        max: 90
+      },
+      align: {
+        options: {
+          left: 'left',
+          center: 'center',
+          right: 'right'
+        }
+      },
+      verticalAlign: {
+        options: {
+          top: 'top',
+          middle: 'middle',
+          bottom: 'bottom'
+        }
+      },
+      position: {
+        options: posList.reduce(function (map, pos) {
+          map[pos] = pos;
+          return map;
+        }, {})
+      },
+      distance: {
+        min: 0,
+        max: 100
+      }
+    };
+
+    app.config = {
+      rotate: 90,
+      align: 'left',
+      verticalAlign: 'middle',
+      position: 'insideBottom',
+      distance: 15,
+      onChange: function () {
+        var labelOption = {
+          normal: {
+            rotate: app.config.rotate,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            position: app.config.position,
+            distance: app.config.distance
+          }
+        };
+        myChart1.setOption({
+          series: [{
+            label: labelOption
+          }, {
+            label: labelOption
+          }, {
+            label: labelOption
+          }, {
+            label: labelOption
+          }]
+        });
+      }
+    };
+
+
+    var labelOption = {
+      show: true,
+      position: app.config.position,
+      distance: app.config.distance,
+      align: app.config.align,
+      verticalAlign: app.config.verticalAlign,
+      rotate: app.config.rotate,
+      formatter: '{c}  {name|{a}}',
+      fontSize: 16,
+      rich: {
+        name: {
+        }
+      }
+    };
+
+    option1 = {
+      title: {
+        text: '接待观众数量&网上浏览量'
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+        data: ['共接待观众数量','日均接待观众数量','网上展馆浏览量'],
+        left: 250,
+      },
+      toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+          mark: {show: true},
+          dataView: {show: true, readOnly: false},
+          magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+          restore: {show: true},
+          saveAsImage: {show: true}
+        }
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisTick: {show: false},
+          data: name1
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: '共接待观众数量',
+          type: 'bar',
+          barGap: 0,
+          label: labelOption,
+          emphasis: {
+            focus: 'series'
+          },
+          data: year_reception_number
+        },
+        {
+          name: '日均接待观众数量',
+          type: 'bar',
+          label: labelOption,
+          emphasis: {
+            focus: 'series'
+          },
+          data: daily_reception_number
+        },
+        {
+          name: '网上展馆浏览量',
+          type: 'bar',
+          label: labelOption,
+          emphasis: {
+            focus: 'series'
+          },
+          data: daily_online_pageviews_number
+        }
+      ]
+    };
+
+    myChart1.setOption(option1);
+
+  </script>
+
+  <script type="text/javascript">
+    var element2 = document.getElementById("obj").value;
+    c=JSON.parse(element2);
+    var chartDom2 = document.getElementById('main2');
+    var myChart2 = echarts.init(chartDom2);
+    var option2;
+
+    let o=[];
+    for(i=0;i<c.length;i++){
+      o[i]={};
+      o[i].name=c[i].name;
+      o[i].value=c[i].number_year;
+    }
+
+    var element3 = document.getElementById("obj2").value;
+    d=JSON.parse(element3);
+
+    let o1=[];
+    for(i=0;i<d.length;i++){
+      o1[i]={};
+      o1[i].name=d[i].type;
+      o1[i].value=d[i].number;
+    }
+
+    let name2=[];
+    for(i=0;i<d.length;i++){
+      name2[i]=d[i].type;
+    }
+    option2 = {
+      title: {
+        text: '全年展出文物数量&展出文物类型',
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+      },
+      legend: {
+        data: name2,
+        padding: 50,
+      },
+      series: [
+        {
+          name: '展览类型',
+          type: 'pie',
+          selectedMode: 'single',
+          radius: [0, '30%'],
+          label: {
+            position: 'inner',
+            fontSize: 14,
+          },
+          labelLine: {
+            show: false
+          },
+          data: o
+        },
+        {
+          name: '文物类型',
+          type: 'pie',
+          radius: ['45%', '60%'],
+          labelLine: {
+            length: 30,
+          },
+          label: {
+            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+            backgroundColor: '#F6F8FC',
+            borderColor: '#8C8D8E',
+            borderWidth: 1,
+            borderRadius: 4,
+
+            rich: {
+              a: {
+                color: '#6E7079',
+                lineHeight: 22,
+                align: 'center'
+              },
+              hr: {
+                borderColor: '#8C8D8E',
+                width: '100%',
+                borderWidth: 1,
+                height: 0
+              },
+              b: {
+                color: '#4C5058',
+                fontSize: 14,
+                fontWeight: 'bold',
+                lineHeight: 33
+              },
+              per: {
+                color: '#fff',
+                backgroundColor: '#4C5058',
+                padding: [3, 4],
+                borderRadius: 4
+              }
+            }
+          },
+          data: o1
+        }
+      ]
+    };
+
+    myChart2.setOption(option2);
+  </script>
 
 
 
