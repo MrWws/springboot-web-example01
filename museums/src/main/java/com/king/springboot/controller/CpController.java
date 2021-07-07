@@ -3,8 +3,6 @@ package com.king.springboot.controller;
 import com.alibaba.fastjson.JSON;
 
 import com.king.springboot.dao.CpDao;
-import com.king.springboot.pojo.Total_Bymonth;
-import com.king.springboot.pojo.Visitor_Total;
 import com.king.springboot.pojo.cp.*;
 
 //import com.nwu.service.CpNumberService;
@@ -13,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

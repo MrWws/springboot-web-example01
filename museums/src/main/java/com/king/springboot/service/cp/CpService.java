@@ -1,8 +1,6 @@
 package com.king.springboot.service.cp;
 
 import com.king.springboot.dao.CpDao;
-import com.king.springboot.dao.Visitor_TotalMapper;
-import com.king.springboot.pojo.Visitor_Total;
 import com.king.springboot.pojo.cp.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
